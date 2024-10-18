@@ -1,5 +1,4 @@
-const mapapi = process.env.MAP_API_KEY;
-console.log(mapapi);
+
 
 // Initialize the map and set the view to a desired location (Delhi in this example)
 var map = L.map('map').setView([28.6139, 77.2090], 13);
