@@ -1,4 +1,3 @@
-<div id="map" style="height: 400px ; width: 800px;"></div>
 
 let mapkey = "<%= process.env.MAP_API_KEY %>"
 
