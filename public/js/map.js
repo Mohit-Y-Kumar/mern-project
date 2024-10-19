@@ -1,16 +1,20 @@
+<div id="map" style="height: 400px ; width: 800px;"></div>
 
+let mapkey = "<%= process.env.MAP_API_KEY %>"
 
-// Initialize the map and set the view to a desired location (Delhi in this example)
-var map = L.map('map').setView([28.6139, 77.2090], 13);
+const map = L.map('map').setView([28.6139, 77.2090], 13);
 
-// Add Geoapify tile layer to the map
-L.tileLayer('https://maps.geoapify.com/v1/tile/osm-carto/{z}/{x}/{y}.png?apiKey=mapapi', {
-    attribution: '© OpenStreetMap contributors, © Geoapify',
-    maxZoom: 20
+L.tileLayer(`https://maps.geoapify.com/v1/tile/osm-bright/{z}/{x}/{y}.png?apiKey=${mapkey}`, {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    maxZoom: 18
 }).addTo(map);
+const marker = L.marker([28.6139, 77.2090]).addTo(map);
+marker.bindPopup('<b>Delhi</b><br>This is the capital of India.').openPopup();
+const circle = L.circle([28.6139, 77.2090], {
+    color: 'blue',
+    fillColor: '#30f',
+    fillOpacity: 0.5,
+    radius: 200,
+}).addTo(map);
+circle.bindPopup(' radius around Delhi.');
 
-// Add a marker at the center location (Delhi in this case)
-var marker = L.marker([28.6139, 77.2090]).addTo(map);
-
-// Optional: Add a popup to the marker
-marker.bindPopup("<b>Delhi</b><br>India's capital city.").openPopup();
