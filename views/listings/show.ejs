@@ -132,14 +132,12 @@
                 </div>
                 <div id="map " style="height: 400px; width: 500px;"></div>
                 <script>
-                    let key = "<%= process.env.MAP_API_KEY %>"
+                    let mapkey = "<%= process.env.MAP_API_KEY %>"
                     console.log(key);
-                    let KEY = "5111d3e9ee1245d2b1a54075375147cd";
-                    console.log(KEY);
 
                     const map = L.map('map').setView([28.6139, 77.2090], 13);
 
-                    L.tileLayer(`https://maps.geoapify.com/v1/tile/osm-bright/{z}/{x}/{y}.png?apiKey=${KEY}`, {
+                    L.tileLayer(`https://maps.geoapify.com/v1/tile/osm-bright/{z}/{x}/{y}.png?apiKey=${mapkey}`, {
                         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
                         maxZoom: 18
                     }).addTo(map);
