@@ -132,12 +132,10 @@
                 </div>
                 <div id="map " style="height: 400px; width: 500px;"></div>
                 <script>
-                    let mapkey = "<%= MAP_API_KEY %>"
-                    console.log(mapkey);
 
                     const map = L.map('map').setView([28.6139, 77.2090], 13);
 
-                    L.tileLayer(`https://maps.geoapify.com/v1/tile/osm-bright/{z}/{x}/{y}.png?apiKey=${mapkey}`, {
+                    L.tileLayer(`https://maps.geoapify.com/v1/tile/osm-bright/{z}/{x}/{y}.png?apiKey=5111d3e9ee1245d2b1a54075375147cd`, {
                         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
                         maxZoom: 18
                     }).addTo(map);
@@ -152,7 +150,4 @@
                     circle.bindPopup(' radius around Delhi.');
 
                 </script>
-    </div>
-
-
     </div>
