@@ -29,7 +29,11 @@ module.exports.showListing = async (req, res) => {
 
     }
     console.log(listing);
+<<<<<<< HEAD
     res.render("../views/listings/show.ejs", { listing, MAP_API_KEY: process.env.MAP_API_KEY });
+=======
+    res.render("../views/listings/show.ejs", { listing, });
+>>>>>>> e7e10eeaaf48953eb9fa51eb40157c1db5e4c61d
 };
 
 module.exports.createListing = async (req, res, next) => {
